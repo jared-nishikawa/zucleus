@@ -6,7 +6,9 @@ stages:
 build:
   stage: build
   before_script:
-    - apt-get install python-pip
+    - apt-get install curl
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    - python3 get-pip.py
     - pip install setuptools
   script: python3 setup.py install
 
