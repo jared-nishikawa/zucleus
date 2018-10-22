@@ -16,7 +16,8 @@ setup(name='zucleus',
         author_email=info["__author_email__"],
         package_dir={'zucleus': 'zucleus'},
         install_requires=[
-            "flask-restful"],
+            "flask-restful",
+            "requests"],
         entry_points={
             'console_scripts': [
                 'zuserver = zucleus.server.zuserver:main',

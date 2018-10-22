@@ -1,0 +1,12 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script: python3 setup.py install
+
+  
+
+
