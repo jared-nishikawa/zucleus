@@ -6,7 +6,7 @@ stages:
 build:
   stage: build
   before_script:
-    - apt-get install python3-setuptools
+    - pip install setuptools
   script: python3 setup.py install
 
   
