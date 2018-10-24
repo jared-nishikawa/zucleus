@@ -82,6 +82,12 @@ class Docs(Resource):
     def get(self, **kwargs):
         return {'message': 'docs'}
 
+@endpoint('/users')
+class Users(Resource):
+    @authorized
+    def get(self, **kwargs):
+        return {'message': users.values()}
+
 # FRONTEND ENDPOINTS
 
 @app.route('/')
