@@ -3,6 +3,7 @@
 ## Contents
 
   - [About](#about)
+  - [Install](#install)
 
 ## About
 
