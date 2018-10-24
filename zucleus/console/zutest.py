@@ -12,7 +12,7 @@ def main():
         if port > 65535:
             port = 5000
 
-    url = f"http://localhost:{port}/api/v1"
+    url = "http://localhost:{}/api/v1".format(port)
     Z = Zuc(url)
     email = "jared.nishikawa@gmail.com"
     try:

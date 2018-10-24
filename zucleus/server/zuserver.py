@@ -111,6 +111,6 @@ def main():
     try:
         app.run(debug=debug, port=port)
     except PermissionError:
-        print(f"Permission denied opening port {port}")
+        print('Permission denied opening port {}'.format(port))
     except OSError:
-        print(f"Port already in use: {port}")
+        print('Port already in use: {}'.format(port))
