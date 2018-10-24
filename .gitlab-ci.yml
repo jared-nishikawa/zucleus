@@ -18,7 +18,7 @@ test:
     - python3 get-pip.py
     - pip install setuptools
     - pip install .
-  script: zuserver
+  script: zuserver & zutest
 
   
 
