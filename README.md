@@ -9,4 +9,4 @@
 
 ## Install
 
-pip install git+https://gitlab.com/jared-n/zucleus.git
+`pip install git+https://gitlab.com/jared-n/zucleus.git`
