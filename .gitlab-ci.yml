@@ -6,6 +6,7 @@ stages:
 build:
   stage: build
   before_script:
+    - cat /etc/*ele*
     - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     - python3 get-pip.py
     - pip install setuptools
@@ -18,7 +19,7 @@ test:
     - python3 get-pip.py
     - pip install setuptools
     - pip install .
-  script: zuserver & zutest
+  script: zuserver & sleep 1 && zutest
 
   
 
