@@ -47,12 +47,12 @@ def endpoint(name):
 
 # API ENDPOINTS
 
-@endpoint(f'/api/{version}/')
+@endpoint('/api/{}/'.format(version))
 class Root(Resource):
     def get(self):
         return {'message': 'root'}
 
-@endpoint(f'/api/{version}/register')
+@endpoint('/api/{}/register'.format(version))
 class Register(Resource):
     def post(self):
         args = register_parser.parse_args()
@@ -61,13 +61,13 @@ class Register(Resource):
         users[cookie] = {"email": email}
         return {'cookie': cookie}
 
-@endpoint(f'/api/{version}/verify')
+@endpoint('/api/{}/verify'.format(version))
 class Verify(Resource):
     @authorized
     def post(self, **kwargs):
         return {'message': 'success'}
 
-@endpoint(f'/api/{version}/whoami')
+@endpoint('/api/{}/whoami'.format(version))
 class Whoami(Resource):
     @authorized
     def post(self, **kwargs):
@@ -75,7 +75,7 @@ class Whoami(Resource):
         user = users.get(cookie)
         return {'message': user.get("email")}
 
-@endpoint(f'/api/{version}/docs')
+@endpoint('/api/{}/docs'.format(version))
 class Docs(Resource):
     @authorized
     def get(self, **kwargs):
