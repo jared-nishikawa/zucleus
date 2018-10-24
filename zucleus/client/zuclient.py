@@ -42,6 +42,10 @@ class Zuc:
         route = "/docs"
         return self._get(route)
 
+    def users(self):
+        route = "/users"
+        return self._get(route)
+
     @httpmethod
     def _post(self, route, json={}):
         return self.session.post(
