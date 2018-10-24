@@ -33,5 +33,8 @@ def main():
     d = Z.docs()
     print(d)
 
+    u = Z.users()
+    print(u)
+
 
 

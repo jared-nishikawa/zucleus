@@ -86,7 +86,7 @@ class Docs(Resource):
 class Users(Resource):
     @authorized
     def get(self, **kwargs):
-        return {'message': users.values()}
+        return {'message': list(users.values())}
 
 # FRONTEND ENDPOINTS
 
