@@ -11,6 +11,10 @@ build:
     - pip install setuptools
   script: pip install .
 
+test:
+  stage: test
+  script: zuserver
+
   
 
 
