@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Resource, Api, reqparse
 
 import os
@@ -13,6 +13,8 @@ app = Flask(__name__)
 api = Api(app)
 
 key = os.urandom(64)
+version = "v1"
+title = "zucleus"
 
 register_parser = reqparse.RequestParser()
 register_parser.add_argument('email')
@@ -37,14 +39,20 @@ def authorized(inner):
         return inner(*args, **kwargs, cookie=cookie)
     return wrapped
 
+def endpoint(name):
+    def register_class(inner):
+        api.add_resource(inner, name)
+        return inner
+    return register_class
 
-class WrapperError(Exception):
-    pass
+# API ENDPOINTS
 
+@endpoint(f'/api/{version}/')
 class Root(Resource):
     def get(self):
         return {'message': 'root'}
 
+@endpoint(f'/api/{version}/register')
 class Register(Resource):
     def post(self):
         args = register_parser.parse_args()
@@ -53,11 +61,13 @@ class Register(Resource):
         users[cookie] = {"email": email}
         return {'cookie': cookie}
 
+@endpoint(f'/api/{version}/verify')
 class Verify(Resource):
     @authorized
     def post(self, **kwargs):
         return {'message': 'success'}
 
+@endpoint(f'/api/{version}/whoami')
 class Whoami(Resource):
     @authorized
     def post(self, **kwargs):
@@ -65,16 +75,20 @@ class Whoami(Resource):
         user = users.get(cookie)
         return {'message': user.get("email")}
 
+@endpoint(f'/api/{version}/docs')
 class Docs(Resource):
     @authorized
     def get(self, **kwargs):
         return {'message': 'docs'}
 
-api.add_resource(Root, '/')
-api.add_resource(Register, '/register')
-api.add_resource(Verify, '/verify')
-api.add_resource(Whoami, '/whoami')
-api.add_resource(Docs, '/docs')
+# FRONTEND ENDPOINTS
+
+@app.route('/')
+def index():
+    kwargs = {"title": title.capitalize()}
+    return render_template('index.html', **kwargs)
+
+# MAIN
 
 def parse_args(default_port):
     parser = argparse.ArgumentParser()

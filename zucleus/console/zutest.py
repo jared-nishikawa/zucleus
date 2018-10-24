@@ -12,7 +12,7 @@ def main():
         if port > 65535:
             port = 5000
 
-    url = f"http://localhost:{port}"
+    url = f"http://localhost:{port}/api/v1"
     Z = Zuc(url)
     email = "jared.nishikawa@gmail.com"
     try:
@@ -20,8 +20,13 @@ def main():
     except Exception as e:
         print(e)
         sys.exit(1)
+
+    r = Z.root()
+    print(r)
+
     v = Z.verify()
     print(v)
+
     w = Z.whoami()
     print(w)
 

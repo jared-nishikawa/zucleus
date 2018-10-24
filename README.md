@@ -1,11 +1,11 @@
 # Zucleus: A demonstration of coding, packaging, and presentation.
 
-# Contents
+## Contents
 
   - [About](#about)
 
-# About
+## About
 
-# Install
+## Install
 
 pip install git+https://gitlab.com/jared-n/zucleus.git

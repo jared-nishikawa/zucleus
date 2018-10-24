@@ -20,6 +20,10 @@ class Zuc:
         self.url = url
         self.session = requests.Session()
 
+    def root(self):
+        route = "/"
+        return self._get(route)
+
     def register(self, email):
         route = "/register"
         resp = self._post(route, json={"email": email})

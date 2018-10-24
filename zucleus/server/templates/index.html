@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <title>{{title}}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='zucleus.css') }}">
+<body class="z1-content" style="max-width:1300px">
+
+<!-- First Grid: Logo & About -->
+<div class="z1-row">
+  <div class="z1-half z1-black z1-container z1-center" style="height:700px">
+    <div class="z1-padding-64">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="z1-padding-64">
+      <!--
+      <a href="#" class="z1-button z1-black z1-block z1-hover-blue-grey z1-padding-16">Home</a>
+      <a href="#work" class="z1-button z1-black z1-block z1-hover-teal z1-padding-16">My Work</a>
+      <a href="#work" class="z1-button z1-black z1-block z1-hover-dark-grey z1-padding-16">Resume</a>
+      <a href="#contact" class="z1-button z1-black z1-block z1-hover-brown z1-padding-16">Contact</a>
+      -->
+    </div>
+  </div>
+
+  <div class="z1-half z1-blue-grey z1-container" style="height:700px">
+    <div class="z1-padding-64 z1-center">
+      <h1>About</h1>
+      <!--<img src="/z1images/avatar3.png" class="z1-margin z1-circle" alt="Person" style="width:50%">-->
+      <div class="z1-left-align z1-padding-large">
+        <p>{{title}} is a lightweight demo project.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid: Work & Resume -->
+<!--
+<div class="z1-row">
+  <div class="z1-half z1-light-grey z1-center" style="min-height:800px" id="work">
+    <div class="z1-padding-64">
+      <h2>My Work</h2>
+      <p>Some of my latest projects.</p>
+    </div>
+    <div class="z1-row">
+      <div class="z1-half">
+        <img src="/z1images/coffee.jpg" style="width:100%">
+      </div>
+      <div class="z1-half">
+        <img src="/z1images/workbench.jpg" style="width:100%">
+      </div>
+    </div>
+    <div class="z1-row z1-hide-small">
+      <div class="z1-half">
+        <img src="/z1images/workbench.jpg" style="width:100%">
+      </div>
+      <div class="z1-half">
+        <img src="/z1images/coffee.jpg" style="width:100%">
+      </div>
+    </div>
+
+    <div class="z1-row z1-hide-small">
+      <div class="z1-half">
+        <img src="/z1images/sound.jpg" style="width:100%">
+      </div>
+      <div class="z1-half">
+        <img src="/z1images/workbench.jpg" style="width:100%">
+      </div>
+    </div><br>
+    <p>Just call me awesome.</p>
+  </div>
+  <div class="z1-half z1-indigo z1-container" style="min-height:800px">
+    <div class="z1-padding-64 z1-center">
+      <h2>Resume</h2>
+      <p>A draft from my CV</p>
+      <div class="z1-container z1-responsive">
+        <table class="z1-table">
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Where</th>
+          </tr>
+          <tr class="z1-white">
+            <td>2012-2016</td>
+            <td>The rest is history..</td>
+            <td>Lorem ipsum</td>
+          </tr>
+          <tr>
+            <td>2009-2012</td>
+            <td>Started my own company</td>
+            <td>My Garage</td>
+          </tr>
+          <tr class="z1-white">
+            <td>2008-2009</td>
+            <td>Started working for Lorem</td>
+            <td>London, UK</td>
+          </tr>
+          <tr>
+            <td>2005-2008</td>
+            <td>Degree in Bachelor of Design</td>
+            <td>Harvard, USA</td>
+          </tr>
+          <tr class="z1-white">
+            <td>2002-2005</td>
+            <td>Degree in Bachelor of Business</td>
+            <td>RMIT University, Melbourne, Australia</td>
+          </tr>
+          <tr class="z1-hide-medium">
+            <td>2002-2005</td>
+            <td>Degree in Bachelor of Business</td>
+            <td>RMIT University, Melbourne, Australia</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- Third Grid: Swing By & Contact -->
+<!--
+<div class="z1-row" id="contact">
+  <div class="z1-half z1-dark-grey z1-container z1-center" style="height:700px">
+    <div class="z1-padding-64">
+      <h1>Swing By</h1>
+    </div>
+    <div class="z1-padding-64">
+      <p>..for a cup of coffee, or whatever.</p>
+      <p>Chicago, US</p>
+      <p>+00 1515151515</p>
+      <p>test@test.com</p>
+    </div>
+  </div>
+  <div class="z1-half z1-teal z1-container" style="height:700px">
+    <div class="z1-padding-64 z1-padding-large">
+      <h1>Contact</h1>
+      <p class="z1-opacity">GET IN TOUCH</p>
+      <form class="z1-container z1-card z1-padding-32 z1-white" action="/action_page.php" target="_blank">
+        <div class="z1-section">
+          <label>Name</label>
+          <input class="z1-input" style="width:100%;" type="text" required name="Name">
+        </div>
+        <div class="z1-section">
+          <label>Email</label>
+          <input class="z1-input" style="width:100%;" type="text" required name="Email">
+        </div>
+        <div class="z1-section">
+          <label>Message</label>
+          <input class="z1-input" style="width:100%;" type="text" required name="Message">
+        </div>
+        <button type="submit" class="z1-button z1-teal z1-right">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- Footer -->
+<!--
+<footer class="z1-container z1-black z1-padding-16">
+    <p></p>
+</footer>
+-->
+
+</body>
+</html>
+
